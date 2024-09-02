@@ -16,7 +16,11 @@
     "commands": [
       {
         "command": "extension.changeColorTheme",
-        "title": "Change Color Theme"
+        "title": "Change Color Customization Theme"
+      },
+      {
+        "command": "extension.removeColorTheme",
+        "title": "Remove Color Customization Theme"
       }
     ],
     "configuration": {
