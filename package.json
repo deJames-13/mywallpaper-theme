@@ -1,8 +1,9 @@
 {
-  "name": "dejames",
-  "displayName": "wallpapertheme",
+  "name": "mywallpapertheme",
+  "displayName": "mywallpapertheme",
   "description": "theme based on my wallpaper",
   "version": "0.0.1",
+  "publisher": "dejames-13",
   "engines": {
     "vscode": "^1.92.0"
   },
@@ -11,26 +12,25 @@
   ],
   "activationEvents": [],
   "main": "./extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "dejames.helloWorld",
-        "title": "Hello World"
-      }
-    ]
-  },
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.92.0",
     "@types/mocha": "^10.0.7",
     "@types/node": "20.x",
-    "eslint": "^8.57.0",
-    "typescript": "^5.4.5",
+    "@types/vscode": "^1.92.0",
     "@vscode/test-cli": "^0.0.9",
-    "@vscode/test-electron": "^2.4.0"
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "css": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deJames-13/mywallpaper-theme.git"
   }
 }
