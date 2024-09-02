@@ -20,16 +20,6 @@ function activate(context) {
 
       console.log('CSS file read successfully');
 
-      // Parse the CSS file
-      let parsedCSS;
-      try {
-        parsedCSS = css.parse(data);
-      } catch (parseErr) {
-        vscode.window.showErrorMessage('Error parsing CSS file');
-        console.error('Error parsing CSS file:', parseErr);
-        return;
-      }
-
       const colors = {};
 
       // Manually parse the CSS file to extract color definitions
