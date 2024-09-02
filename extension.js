@@ -35,13 +35,13 @@ function activate(context) {
       const newColors = {
         "terminalCursor.background": colors['cursor'],
         "terminalCursor.foreground": colors['cursor'],
-        "statusBar.background": colors['color1'],
-        "statusBar.noFolderBackground": colors['color2'],
-        "statusBar.debuggingBackground": colors['color3'],
+        "statusBar.background": colors['color13'],
+        "statusBar.noFolderBackground": colors['color0'],
+        "statusBar.debuggingBackground": colors['color14'],
         "statusBar.debuggingForeground": colors['foreground'],
-        "titleBar.activeBackground": colors['color4'],
+        "titleBar.activeBackground": colors['color1'],
         "titleBar.activeForeground": colors['foreground'],
-        "titleBar.inactiveBackground": colors['color5'],
+        "titleBar.inactiveBackground": colors['color0'],
         "titleBar.inactiveForeground": colors['foreground']
       }
 
