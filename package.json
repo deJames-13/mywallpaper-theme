@@ -15,11 +15,11 @@
   "contributes": {
     "commands": [
       {
-        "command": "my-wallpaper-theme.changeColorTheme",
+        "command": "extension.changeColorTheme",
         "title": "Change Color Customization Theme"
       },
       {
-        "command": "my-wallpaper-theme.removeColorTheme",
+        "command": "extension.removeColorTheme",
         "title": "Remove Color Customization Theme"
       }
     ],
