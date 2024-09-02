@@ -47,7 +47,12 @@ function activate(context) {
 
       const currentColors = config.get('workbench.colorCustomizations') || {};
 
-      const dynamicColors = { ...currentColors, ...newColors };
+      const dynamicColors = { 
+        'workbench.colorCustomizations': {
+          ...currentColors,
+          ...newColors
+        }
+       };
 
       config.update('workbench.colorCustomizations', dynamicColors['workbench.colorCustomizations'], vscode.ConfigurationTarget.Global)
         .then(() => {
