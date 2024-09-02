@@ -1,5 +1,6 @@
 
 const fs = require('fs');
+const path = require('path');
 const vscode = require('vscode');
 const defaultColors = require('./defaultColors.js')
 
@@ -11,6 +12,15 @@ const validateColors = (colors) => {
 
 
 module.exports = (jsonFilePath) => {
+    jsonFilePath = path.resolve(jsonFilePath);
+    console.log('JSON file path:', jsonFilePath);
+
+    if (!fs.existsSync(jsonFilePath)) {
+        console.error('JSON file does not exist');
+        vscode.window.showErrorMessage('JSON file does not exist. Using default instead.');
+        return defaultColors;
+    }
+
     return fs.readFile(jsonFilePath, 'utf8', (err, data) => {
     if (err) {
         console.error('Error reading JSON file:', err);
