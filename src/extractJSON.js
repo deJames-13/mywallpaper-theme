@@ -22,15 +22,16 @@ module.exports = (jsonFilePath) => {
     let colors;
     try {
         const parsedData = JSON.parse(data);
+        if (!validateColors(parsedData)) 
+            return vscode.window.showErrorMessage('Invalid JSON format.');
+        
         colors = {
         ...parsedData.special,
         ...parsedData.colors
         };
         console.log('Extracted colors:', colors);
 
-        if (validateColors(colors)) return colors;
-        else vscode.window.showErrorMessage('Invalid JSON format.');
-
+        return colors
     } catch (parseErr) {
         console.error('Error parsing JSON file:', parseErr);
         vscode.window.showErrorMessage('Error parsing JSON file. Using default instead.');
