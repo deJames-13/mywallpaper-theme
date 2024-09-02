@@ -33,8 +33,11 @@ module.exports = (colors) => {
 
 
         "terminalCursor.foreground": colors["cursor"] || "", 
+        "statusBar.foreground": colors["cursor"] || "", 
         "statusBar.debuggingForeground": colors["cursor"] || "", 
         "titleBar.inactiveForeground": colors["cursor"] || "", 
+        "editorCursor.foreground": colors["cursor"] || "",
+        
 
         
         "tab.hoverBackground": colors["color5"] + '69' || "", 
