@@ -18,7 +18,18 @@
         "command": "extension.changeColorTheme",
         "title": "Change Color Theme"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Wallpaper Theme Settings",
+      "properties": {
+        "wallpaperTheme.cssFilePath": {
+          "type": "string",
+          "default": "${env:HOME}/.cache/wal/colors-waybar.css",
+          "description": "Path to the CSS file containing the color scheme: @define-color background #000000;"
+        }
+      }
+    }
   },
   "scripts": {
     "lint": "eslint .",
