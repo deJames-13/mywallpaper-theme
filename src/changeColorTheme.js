@@ -9,31 +9,32 @@ module.exports = async () => {
 
     console.log(`Reading JSON file from: ${jsonFilePath}`);
     
-    const colors = extractJSON(jsonFilePath);
+    const colors = extractJSON(jsonFilePath, (colors)=>{
+      const currentColors = config.get('workbench.colorCustomizations') || {};
+      const newColors = workbenchCustomization(colors);
+
+      const dynamicColors = { 
+        'workbench.colorCustomizations': {
+          ...currentColors,
+          ...newColors
+        }
+        };
+
+      config.update(
+        'workbench.colorCustomizations', 
+        dynamicColors['workbench.colorCustomizations'], 
+        vscode.ConfigurationTarget.Global)
+        .then(() => {
+          vscode.window.showInformationMessage('Color theme updated! Using Colors From: ', jsonFilePath);
+          console.log('Color theme updated successfully');
+        })
+        .catch((error) => {
+          vscode.window.showErrorMessage('Error updating color theme!');
+          console.error('Error updating color theme:', error);
+        });
+    });
 
 
-    const currentColors = config.get('workbench.colorCustomizations') || {};
-    const newColors = workbenchCustomization(colors);
-
-    const dynamicColors = { 
-      'workbench.colorCustomizations': {
-        ...currentColors,
-        ...newColors
-      }
-      };
-
-    config.update(
-      'workbench.colorCustomizations', 
-      dynamicColors['workbench.colorCustomizations'], 
-      vscode.ConfigurationTarget.Global)
-      .then(() => {
-        vscode.window.showInformationMessage('Color theme updated!');
-        console.log('Color theme updated successfully');
-      })
-      .catch((error) => {
-        vscode.window.showErrorMessage('Error updating color theme!');
-        console.error('Error updating color theme:', error);
-      });
 
 
 
