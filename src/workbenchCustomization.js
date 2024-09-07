@@ -6,24 +6,24 @@ module.exports = (colors) => {
     return {
         "terminal.background": colors["color1"] + '00' || "", 
         "terminalCursor.background": colors["color1"] || "", 
-        "statusBar.background": colors["color1"] || "", 
+        "statusBar.background": colors["color5"] + '69'|| "", 
         "scrollbarSlider.background": colors["color5"] + '69' || "", 
 
         "badge.background": colors["color6"] || "", 
         "activityBarBadge.background": colors["color6"] || "", 
-        "button.background": colors["color1"] || "", 
+        "button.background": colors["color5"] || "", 
         "breadcrumb.focusForeground": colors["color6"] || "", 
-        "list.activeSelectionBackground": colors["color1"] || "", 
-        "list.inactiveSelectionBackground": colors["color1"] || "", 
+        "list.activeSelectionBackground": colors["color5"] + '69' || "", 
+        "list.inactiveSelectionBackground": colors["color5"]+ '69' || "", 
         "list.focusAndSelectionOutline": colors["color5"] + '69' || "", 
         "focusBorder": colors["color6"] || "", 
         
         "statusBar.noFolderBackground": colors["color0"] || "", 
-        "statusBar.debuggingBackground": colors["color6"] || "", 
+        "statusBar.debuggingBackground": colors["color1"] + '69' || "", 
 
         "titleBar.activeBackground": colors["color0"] + '00' || "", 
-        "activityBar.activeBackground": colors["color1"] + '69' || "", 
-        "tab.activeBackground": colors["color1"] + '69' || "", 
+        "activityBar.activeBackground": colors["color5"] + '69' || "", 
+        "tab.activeBackground": colors["color5"] + '69' || "", 
         "minimapSlider.activeBackground": colors["color5"] + '69' || "", 
         "scrollbarSlider.activeBackground": colors["color5"] + '69' || "", 
 
