@@ -1,60 +1,67 @@
+const defaultColors = require('./defaultColors.js')
+
 module.exports = (colors) => {
     if (!colors) {
-        return;
+        colors = defaultColors
     }
 
+    let transparent = "#00000000"
+    let primary = colors["color5"] || defaultColors["color5"]
+    let secondary = colors["color11"] || defaultColors["color11"]
+    let tertiary = colors["color6"] || defaultColors["color6"]
+    let foreground = colors["cursor"] || defaultColors["cursor"]
+    let background = colors["color0"] || defaultColors["color0"]
+
     return {
-        "terminal.background": colors["color1"] + '00' || "", 
-        "terminalCursor.background": colors["color1"] || "", 
-        "statusBar.background": colors["color5"] + '69'|| "", 
-        "scrollbarSlider.background": colors["color5"] + '69' || "", 
+        "terminal.background": transparent,
+        "terminal.foreground": foreground,
+        "terminalCursor.background": foreground,
+        "statusBar.background": primary + '69',
+        "scrollbarSlider.background": primary + '69',
 
-        "badge.background": colors["color6"] || "", 
-        "activityBarBadge.background": colors["color6"] || "", 
-        "button.background": colors["color5"] || "", 
-        "breadcrumb.focusForeground": colors["color6"] || "", 
-        "list.activeSelectionBackground": colors["color5"] + '69' || "", 
-        "list.inactiveSelectionBackground": colors["color5"]+ '69' || "", 
-        "list.focusAndSelectionOutline": colors["color5"] + '69' || "", 
-        "focusBorder": colors["color6"] || "", 
+        "badge.background": secondary,
+        "activityBarBadge.background": tertiary,
+        "button.background": secondary,
+        "breadcrumb.focusForeground": tertiary,
+        "list.activeSelectionBackground": primary + '69',
+        "list.inactiveSelectionBackground": primary + '69',
+        "list.focusAndSelectionOutline": primary + '69',
+        "focusBorder": tertiary,
         
-        "statusBar.noFolderBackground": colors["color0"] || "", 
-        "statusBar.debuggingBackground": colors["color1"] + '69' || "", 
+        "statusBar.noFolderBackground": background,
+        "statusBar.debuggingBackground": foreground + '69',
 
-        "titleBar.activeBackground": colors["color0"] + '00' || "", 
-        "activityBar.activeBackground": colors["color5"] + '69' || "", 
-        "tab.activeBackground": colors["color5"] + '69' || "", 
-        "minimapSlider.activeBackground": colors["color5"] + '69' || "", 
-        "scrollbarSlider.activeBackground": colors["color5"] + '69' || "", 
+        "titleBar.activeBackground": background + '00',
+        "activityBar.activeBackground": primary + '69',
+        "tab.activeBackground": secondary + '69',
+        "minimapSlider.activeBackground": primary + '69',
+        "scrollbarSlider.activeBackground": primary + '69',
 
-        "titleBar.border": colors["color5"] || "", 
-        "tab.activeBorder": colors["color5"] || "", 
-        "activityBar.activeBorder": colors["color5"] || "", 
+        "titleBar.border": primary,
+        "tab.activeBorder": primary,
+        "activityBar.activeBorder": primary,
 
+        "terminalCursor.foreground": foreground,
+        "statusBar.foreground": foreground,
+        "statusBar.debuggingForeground": foreground,
+        "titleBar.inactiveForeground": foreground,
+        "editorCursor.foreground": foreground,
 
-        "terminalCursor.foreground": colors["cursor"] || "", 
-        "statusBar.foreground": colors["cursor"] || "", 
-        "statusBar.debuggingForeground": colors["cursor"] || "", 
-        "titleBar.inactiveForeground": colors["cursor"] || "", 
-        "editorCursor.foreground": colors["cursor"] || "",
-        
-
-        
-        "tab.hoverBackground": colors["color5"] + '69' || "", 
-        "extensionButton.hoverBackground": colors["color5"] + '69' || "", 
-        "list.hoverBackground": colors["color5"] + '69' || "", 
-        "toolbar.hoverOutline": colors["color5"] || "", 
-        "minimapSlider.hoverBackground": colors["color5"] + '69' || "", 
-        "tab.hoverBorder": colors["color5"] || "", 
-        "button.hoverBackground": colors["color5"] + '69' || "", 
-        "sash.hoverBorder": colors["color5"] + '69' || "", 
-        "settings.rowHoverBackground": colors["color5"] + '69' || "", 
-        "button.secondaryHoverBackground": colors["color5"] + '69' || "", 
-        "scrollbarSlider.hoverBackground": colors["color5"] + '69' || "", 
-        "editor.wordHighlightBackground":  colors["color5"] + '69' || "", 
-        "editor.lineHighlightBackground":  colors["color5"] + '69' || "", 
-        "editor.selectionHighlightBackground": colors["color5"] + '69' || "", 
-        "editor.selectionBackground": colors["color5"] + '69' || "", 
+        "tab.hoverBackground": primary + '69',
+        "extensionButton.hoverBackground": primary + '69',
+        "list.hoverBackground": primary + '69',
+        "toolbar.hoverOutline": primary,
+        "minimapSlider.hoverBackground": primary + '69',
+        "tab.hoverBorder": primary,
+        "button.hoverBackground": primary + '69',
+        "sash.hoverBorder": primary + '69',
+        "settings.rowHoverBackground": primary + '69',
+        "button.secondaryHoverBackground": primary + '69',
+        "scrollbarSlider.hoverBackground": primary + '69',
+        "editor.wordHighlightBackground": primary + '69',
+        "editor.lineHighlightBackground": primary + '69',
+        "editor.selectionHighlightBackground": primary + '69',
+        "editor.selectionBackground": primary + '69',
     }
 
 }
